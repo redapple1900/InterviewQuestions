@@ -72,6 +72,7 @@ public class MainTest {
 		int[] num1 ={8,2,2,2,2,2,2,3,4,4,5,6,7};
 		int[] num2 = {6,7,8,3,3,3,3,3,3,4,5,6,7};
 		int[] num3 = {2,2,2,2,2,2,2,2};
+		int[] num4 = {3,1,2,5};
 		
 		System.out.println(fira.findMin(num3));
 		System.out.println(fira.findMin(num2));
@@ -82,7 +83,30 @@ public class MainTest {
 		
 		System.out.println(fp.getPeak(num));
 		
+		int[] array=ProductOfOther.getProductOfOther(num3);
+		
+		for (Integer k:array)
+			System.out.print(k+" ");
+		System.out.println();
 		System.out.println(PossibleNumber.getPossibleNumber(2, 2, 1, 1));
+		System.out.println(PossibleNumber.getPossibleNumber(1, 1, 1, 1));
+		System.out.println(PossibleNumber.getPossibleNumber(1, 1, 1, 0));
+		System.out.println(PossibleNumber.getPossibleNumber(1, 1, 0, 0));
+		System.out.println(PossibleNumber.getPossibleNumber(1, 0, 0, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 2, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 1, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 0, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 2, 2));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 2, 1));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 2, 1, 1));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 1, 1, 1));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 1, 1, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 1, 0, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(2, 0, 0, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 1, 1, 1));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 1, 1, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 1, 0, 0));
+		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 0, 0, 0));
 		
 	}
 	/*
