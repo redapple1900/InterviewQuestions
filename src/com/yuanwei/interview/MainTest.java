@@ -108,6 +108,11 @@ public class MainTest {
 		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 1, 0, 0));
 		System.out.println(PossibleNumber.getNumberOfPossibleCombinations(1, 0, 0, 0));
 		
+		OneEditDistance oed = new OneEditDistance();
+		System.out.println(oed.isOneEditDistance("aabbc", "aabe"));
+		System.out.println(oed.isOneEditDistance("aab", "aa"));
+		System.out.println(oed.isOneEditDistance("aab", "aaa"));
+		
 	}
 	/*
 	private static void printNestedInteger(NestedInteger nestedInteger){

@@ -6,25 +6,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PossibleNumber {
-	private static int sum;
+
 	public static int getNumberOfPossibleCombinations(int n1,int n2,int n3,int n4){
 		if (n1<0||n2<0||n3<0||n4<0) throw new IllegalArgumentException();
 		
 		if (n1+n2+n3+n4==0) return 0;
 		
-		List<Integer> list = new ArrayList<>(6);
+		//List<Integer> list = new ArrayList<>(6);
 		//0:total 1-4 n1-n4 
-		
+		int[] array = new int[6];
+		array[0]=n1+n2+n3+n4;
+		array[1]=n1;array[2]=n2;array[3]=n3;array[4]=n4;
+		array[5]=0;
+		/*
 		list.add(n1+n2+n3+n4);
 		list.add(n1);
 		list.add(n2);
 		list.add(n3);
 		list.add(n4);
 		list.add(0);
-		
-		sum=0;
+		*/
 		int[] result = new int[1];
-		getPossibleNumberHelper2(list,result);
+		getPossibleNumberHelper2(array,result);
 		return result[0];
 	}
 	
@@ -70,24 +73,24 @@ public class PossibleNumber {
 		
 	}
 	
-	private static void getPossibleNumberHelper2(List<Integer> list,int[] result){
-		if (list.get(0)==0){
+	private static void getPossibleNumberHelper2(int[] array,int[] result){
+		if (array[0]==0){
 			result[0]++;
 			return;
 		}
-		int k=list.get(5);
+		int k=array[5];
 		for (int i=1;i<=4;i++){
-			if (list.get(i)==0) continue;
-			if (list.get(5)==i) continue;
+			if (array[i]==0) continue;
+			if (k==i) continue;
 			
 			
-			list.set(0, list.get(0)-1);
-			list.set(i, list.get(i)-1);
-			list.set(5,i);
-			getPossibleNumberHelper2(list,result);
-			list.set(i, list.get(i)+1);
-			list.set(0, list.get(0)+1);
-			list.set(5, k);
+			array[0]--;
+			array[i]--;
+			array[5]=i;
+			getPossibleNumberHelper2(array,result);
+			array[i]++;
+			array[0]++;
+			array[5]=k;
 		}
 		
 	}
