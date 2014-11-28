@@ -65,8 +65,8 @@ public class MainTest {
 		fa.getFactor(18432425);
 		*/
 		Factorization f = new Factorization();
-		//System.out.println(f.getFactorCombination(24));
-		//System.out.println(f.getFactorCombination(60));
+		System.out.println(f.getFactorCombination(24));
+		System.out.println(f.getFactorCombination(60));
 		FindMininumInRotatedArray fira = new FindMininumInRotatedArray();
 		int[] num ={1,3,4,5,6,7,4,2,1};
 		int[] num1 ={8,2,2,2,2,2,2,3,4,4,5,6,7};
@@ -83,7 +83,7 @@ public class MainTest {
 		
 		System.out.println(fp.getPeak(num));
 		
-		int[] array=ProductOfOther.getProductOfOther(num3);
+		int[] array=ProductOfOther.getProductOfOther(num2);
 		
 		for (Integer k:array)
 			System.out.print(k+" ");

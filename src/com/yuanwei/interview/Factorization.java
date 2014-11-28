@@ -2,6 +2,7 @@ package com.yuanwei.interview;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Factorization {
@@ -49,10 +50,10 @@ public class Factorization {
 	
 	public List<List<Integer>> getFactorCombination(int n) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        getFactorCombinationHelper(n, n/2, result, new ArrayList<Integer>());
+        getFactorCombinationHelper(n, n/2, result, new LinkedList<Integer>());
         return result;
     }
-    private void getFactorCombinationHelper(int n, int start, List<List<Integer>> result, List<Integer> sub) {
+    private void getFactorCombinationHelper(int n, int start, List<List<Integer>> result, LinkedList<Integer> sub) {
         if(n==1) {
             result.add(new ArrayList<Integer>(sub));
             return;
@@ -61,8 +62,8 @@ public class Factorization {
         for(int i = start; i >= 2; i--) {
             if(n % i != 0) continue;
             sub.add(i);
-            getFactorCombinationHelper(n / i, i, result, sub);
-            sub.remove(sub.size() - 1);
+            getFactorCombinationHelper(n / i, Math.min(i, n/i/2), result, sub);
+            sub.removeLast();
         }
     }
 
