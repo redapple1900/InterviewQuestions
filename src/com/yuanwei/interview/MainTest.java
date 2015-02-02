@@ -113,6 +113,43 @@ public class MainTest {
 		System.out.println(oed.isOneEditDistance("aab", "aa"));
 		System.out.println(oed.isOneEditDistance("aab", "aaa"));
 		
+		CoinCombination cb = new CoinCombination();
+		System.out.println(cb.getCoinCombination(7));
+		System.out.println(cb.getCoinCombination(5));
+		System.out.println(cb.getCoinCombination(2));
+		System.out.println(cb.getCoinCombination(13));
+		LongestCommonString lcs = new LongestCommonString();
+		System.out.println(lcs.getLCS("aabbc", "aabe"));
+		int[] sum = {1,1,-4,1,1,-3};
+		KSum ks = new KSum();
+		System.out.println(ks.getKSum(sum, 5));
+		
+		
+		CircularBuffer<Integer> buffer = new CircularBuffer<Integer>(4);
+		
+		System.out.println(buffer.isEmpty());
+		buffer.put(0);
+		System.out.println(buffer.peek());
+		System.out.println(buffer.size());
+		buffer.put(1);
+		buffer.put(2);;
+		buffer.put(3);
+		buffer.put(4);
+		System.out.println(buffer.peek());
+		buffer.put(5);
+		System.out.println(buffer.isFull());
+		System.out.println(buffer.peek());
+		System.out.println(buffer.peekLast());
+		System.out.println(buffer.poll());
+		System.out.println(buffer.pollLast());
+		System.out.println(buffer.poll());
+		System.out.println(buffer.pollLast());
+		System.out.println(buffer.isEmpty());
+		
+		SubSetIII ss3 = new SubSetIII();
+		System.out.println(ss3.getSubset(sum, 4));
+		
+		
 	}
 	/*
 	private static void printNestedInteger(NestedInteger nestedInteger){
